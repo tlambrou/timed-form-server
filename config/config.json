@@ -14,10 +14,10 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "pkadhqxupcnsqg",
-    "password": "574ef79100e00fe029226cc0d1e21faecb3d304aedac8f8a0f589d25ef95b279",
-    "database": "rd5l7p7aekmdn98",
-    "host": "ec2-54-163-236-188.compute-1.amazonaws.com",
+    "username": "ogrtvuirwjntav",
+    "password": "eb970a92f321a6e566321e5a2dfb0ee4b43160ef89085127816151949bb6c12b",
+    "database": "dcn144d3cn0dnr",
+    "host": "ec2-54-83-192-68.compute-1.amazonaws.com",
     "dialect": "postgres",
     "use_env_variable": "HEROKU_POSTGRESQL_BLACK_URL"
   }
