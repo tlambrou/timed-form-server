@@ -6,31 +6,31 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 // const jwt = require('jsonwebtoken');
 const acceptOverride = require('connect-acceptoverride');
-var cors = require('cors')
+var cors = require('cors');
 const db = require("./models");
 
 //**** MIDDLEWARE ****//
-app.use(express.static('public'))
-app.use(bodyParser({limit: '50mb'}))
+app.use(express.static('public'));
+app.use(bodyParser({limit: '50mb'}));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(acceptOverride())
-app.use(cors())
+app.use(bodyParser.json());;
+app.use(acceptOverride());
+app.use(cors());
 
 //**** AUTH MIDDLEWARE ****//
-var checkAuth = function (req, res, next) {
-  const auth = req.header('Authorization')
-
-  if (typeof auth === 'undefined' || auth === null) {
-    req.user = null;
-  } else {
-    const token = auth.slice(7);
-    const decodedToken = jwt.decode(token, { complete: true }) || {};
-    req.user = decodedToken.payload;
-  }
-  next();
-}
-app.use(checkAuth);
+// var checkAuth = function (req, res, next) {
+//   const auth = req.header('Authorization')
+//
+//   if (typeof auth === 'undefined' || auth === null) {
+//     req.user = null;
+//   } else {
+//     const token = auth.slice(7);
+//     const decodedToken = jwt.decode(token, { complete: true }) || {};
+//     req.user = decodedToken.payload;
+//   }
+//   next();
+// }
+// app.use(checkAuth);
 
 // **** CONTROLLERS **** //
 require('./controllers/users-controller.js')(app);
